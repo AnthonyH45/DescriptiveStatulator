@@ -56,6 +56,6 @@ def print_stats():
     if len(data) < 4:
         print("No quartile information as there are less than 4 data points")
         exit(1)
-    print("Q1, Q2, Q3, IQR, Outliers, Extreme Outliers")
+    print("Q1, Q2, Q3, IQR, Outliers, Extreme Outliers coming soon!")
 
 print_stats()
