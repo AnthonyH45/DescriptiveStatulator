@@ -26,6 +26,7 @@ def get_data():
         print("Median:",data[int(len(data)/2)])
     else:
         print("Median:",(data[int(len(data))-1] + data[int(len(data)/2)]) /2)
-
+    # print_mode(data)
+    print("Mode:",max(set(data), key=data.count))
 
 get_data()
