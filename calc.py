@@ -1,3 +1,5 @@
+import math
+
 def get_data():
     data_str = str(input("Enter the sample data as comma separated values or whitespace separated values: "))
     if "," in data_str:
@@ -8,7 +10,7 @@ def get_data():
     data = [int(data_str[i]) for i in range(len(data_str))]
     data.sort()
     print(data)
-    
+
     print("Descriptive Statistics:")
     # print_min(data)
     print("Min: ", data[0])
@@ -32,5 +34,12 @@ def get_data():
     # print_mode(data)
     print("Mode:",max(set(data), key=data.count))
     # print_sd(data)
+    # sum the diff x_i & xbar
+    x_diff = 0
+    for i in data:
+        x_diff += ((i - m) ** 2)
+    variance = (x_diff / (len(data) - 1))
+    print("Standard Deviation:", math.sqrt(variance))
+    print("Variance",variance)
 
 get_data()
