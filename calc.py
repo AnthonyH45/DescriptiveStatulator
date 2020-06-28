@@ -23,8 +23,9 @@ def get_data():
     print("Mean:",sum(data)/len(data))
     # print_median(data)
     if len(data) % 2 == 1: # size is odd
-        print(data[int(len(data)/2)])
+        print("Median:",data[int(len(data)/2)])
     else:
-        print( (data[int(len(data))-1] + data[int(len(data)/2)]) /2)
+        print("Median:",(data[int(len(data))-1] + data[int(len(data)/2)]) /2)
+
 
 get_data()
