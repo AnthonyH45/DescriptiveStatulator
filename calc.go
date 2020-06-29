@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"sort"
 	"strconv"
@@ -98,6 +99,14 @@ func printStats(data []int) error {
 	mode := freq(data)
 	fmt.Printf("Mode: %d\n", mode)
 	// printSD(data)
+	var xDiff float64 = 0
+	for _, i := range data {
+		xDiff += math.Pow(float64(float64(i)-mean), float64(2))
+	}
+	variance := (xDiff / float64(size-1))
+	SD := math.Sqrt(variance)
+	fmt.Printf("Standard Deviatino: %f\n", SD)
+	fmt.Printf("Variance: %f\n", variance)
 	// printVariance(data)
 	// printQ1(data)
 	// printQ2(data)
