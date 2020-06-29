@@ -34,10 +34,12 @@ def print_stats():
     print("Mean:",m)
 
     # print_median(data)
+    median = 0
     if len(data) % 2 == 1: # size is odd
-        print("Median:",data[int(len(data)/2)])
+        median = data[int(len(data)/2)]
     else:
-        print("Median:",(data[int(len(data))-1] + data[int(len(data)/2)]) /2)
+        median = (data[int(len(data))-1] + data[int(len(data)/2)]) / 2
+    print("Median:",median)
 
     # print_mode(data)
     print("Mode:",max(set(data), key=data.count))
@@ -57,5 +59,9 @@ def print_stats():
         print("No quartile information as there are less than 4 data points")
         exit(1)
     print("Q1, Q2, Q3, IQR, Outliers, Extreme Outliers coming soon!")
+    # print_q1(data)
+    #print("Q1:", data[ int( len(data) * 0.25 ) ])
+    # print_q2(data)
+    #print
 
 print_stats()
