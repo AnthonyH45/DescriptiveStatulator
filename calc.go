@@ -135,7 +135,7 @@ func main() {
 	data, err := getData()
 
 	if err != nil {
-		fmt.Println("Error getData()")
+		fmt.Printf("Error getData(), %s", err.Error())
 		os.Exit(1)
 	}
 
