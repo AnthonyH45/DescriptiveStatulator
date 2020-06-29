@@ -125,6 +125,8 @@ func printStats(data []int) error {
 	Q3 := (math.Ceil(Q3UL) + math.Floor(Q3UL)) / float64(2)
 	fmt.Printf("Q3: %f\n", Q3)
 	// printIQR(data)
+	IQR := Q3 - Q1
+	fmt.Printf("IQR: %f\n", IQR)
 
 	return nil
 }
