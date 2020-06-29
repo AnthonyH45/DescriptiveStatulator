@@ -106,10 +106,18 @@ func printStats(data []int) error {
 	variance := (xDiff / float64(size-1))
 	SD := math.Sqrt(variance)
 	fmt.Printf("Standard Deviatino: %f\n", SD)
-	fmt.Printf("Variance: %f\n", variance)
 	// printVariance(data)
+	fmt.Printf("Variance: %f\n", variance)
+
+	if size < 4 {
+		fmt.Println("No quartile information if less than 4 data points")
+		return nil
+	}
 	// printQ1(data)
+	var Q1 float64 = (0.25 * (float64(size) + float64(1)))
+	fmt.Printf("Q1: %f\n", Q1)
 	// printQ2(data)
+
 	// printQ3(data)
 	// printIQR(data)
 
