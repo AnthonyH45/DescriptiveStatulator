@@ -117,7 +117,8 @@ func printStats(data []int) error {
 	var Q1 float64 = (0.25 * (float64(size) + float64(1)))
 	fmt.Printf("Q1: %f\n", Q1)
 	// printQ2(data)
-
+	Q2 := median
+	fmt.Printf("Q2: %f\n", Q2)
 	// printQ3(data)
 	// printIQR(data)
 
