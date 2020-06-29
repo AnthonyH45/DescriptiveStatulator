@@ -71,6 +71,14 @@ func printStats(data []int) error {
 	// printMean(data)
 	mean := float64(s) / float64(size)
 	fmt.Printf("Mean: %f\n", mean)
+	// printMedian(data)
+	var median float64
+	if len(data)%2 == 1 {
+		median = float64(data[int(size/2.0)-1])
+	} else {
+		median = float64((data[int(size/2.0)-1] + data[int(size/2.0)])) / 2.0
+	}
+	fmt.Printf("Median: %f\n", median)
 
 	return nil
 }
