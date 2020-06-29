@@ -46,6 +46,7 @@ func getData() ([]int, error) {
 func printStats(data []int) error {
 	// sort data
 	sort.Ints(data)
+	fmt.Printf("%q\n", data)
 	// printMin(data)
 	min := data[0]
 	fmt.Printf("Min: %d\n", min)
@@ -74,11 +75,18 @@ func printStats(data []int) error {
 	// printMedian(data)
 	var median float64
 	if len(data)%2 == 1 {
-		median = float64(data[int(size/2.0)-1])
+		median = float64(data[int(size/2.0)])
 	} else {
 		median = float64((data[int(size/2.0)-1] + data[int(size/2.0)])) / 2.0
 	}
 	fmt.Printf("Median: %f\n", median)
+	// printMode(data)
+	// printSD(data)
+	// printVariance(data)
+	// printQ1(data)
+	// printQ2(data)
+	// printQ3(data)
+	// printIQR(data)
 
 	return nil
 }
