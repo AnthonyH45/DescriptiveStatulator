@@ -55,6 +55,10 @@ func printStats(data []int) error {
 	// printRange
 	rang := max - min
 	fmt.Printf("Range: %d\n", rang)
+	// printSize(data)
+	size := len(data)
+	fmt.Printf("Size: %d\n", size)
+	//
 
 	return nil
 }
