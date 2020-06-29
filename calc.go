@@ -81,6 +81,22 @@ func printStats(data []int) error {
 	}
 	fmt.Printf("Median: %f\n", median)
 	// printMode(data)
+	freq := func(data []int) int {
+		freq := make([]int, max+1)
+		for i := 0; i < len(data); i++ {
+			freq[data[i]]++
+		}
+
+		max := freq[0]
+		for i := 0; i < len(freq); i++ {
+			if freq[i] > max {
+				max = i
+			}
+		}
+		return max
+	}
+	mode := freq(data)
+	fmt.Printf("Mode: %d\n", mode)
 	// printSD(data)
 	// printVariance(data)
 	// printQ1(data)
