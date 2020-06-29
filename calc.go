@@ -49,6 +49,7 @@ func printStats(data []int) error {
 	// printMin(data)
 	fmt.Printf("Min: %d\n", data[0])
 	// printMax(data)
+	fmt.Printf("Max: %d\n", data[len(data)-1])
 
 	return nil
 }
