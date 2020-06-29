@@ -47,9 +47,14 @@ func printStats(data []int) error {
 	// sort data
 	sort.Ints(data)
 	// printMin(data)
-	fmt.Printf("Min: %d\n", data[0])
+	min := data[0]
+	fmt.Printf("Min: %d\n", min)
 	// printMax(data)
-	fmt.Printf("Max: %d\n", data[len(data)-1])
+	max := data[len(data)-1]
+	fmt.Printf("Max: %d\n", max)
+	// printRange
+	rang := max - min
+	fmt.Printf("Range: %d\n", rang)
 
 	return nil
 }
