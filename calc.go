@@ -114,7 +114,8 @@ func printStats(data []int) error {
 		return nil
 	}
 	// printQ1(data)
-	var Q1 float64 = (0.25 * (float64(size) + float64(1)))
+	var Q1UL float64 = (0.25 * (float64(size) + float64(1)))
+	Q1 := (math.Ceil(Q1UL) + math.Floor(Q1UL)) / float64(2)
 	fmt.Printf("Q1: %f\n", Q1)
 	// printQ2(data)
 	Q2 := median
