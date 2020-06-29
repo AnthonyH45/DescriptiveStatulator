@@ -58,7 +58,16 @@ func printStats(data []int) error {
 	// printSize(data)
 	size := len(data)
 	fmt.Printf("Size: %d\n", size)
-	//
+	// printSum(data)
+	sum := func(data []int) int {
+		toRet := 0
+		for _, i := range data {
+			toRet += i
+		}
+		return toRet
+	}
+	s := sum(data)
+	fmt.Printf("Sum: %d\n", s)
 
 	return nil
 }
