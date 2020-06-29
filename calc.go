@@ -68,6 +68,9 @@ func printStats(data []int) error {
 	}
 	s := sum(data)
 	fmt.Printf("Sum: %d\n", s)
+	// printMean(data)
+	mean := float64(s) / float64(size)
+	fmt.Printf("Mean: %f\n", mean)
 
 	return nil
 }
