@@ -4,11 +4,12 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
 
-func getData() ([]int64, error) {
+func getData() ([]int, error) {
 	userData := bufio.NewReader(os.Stdin)
 	fmt.Print("Enter the sample data as comma separated values or whitespace separated values: ")
 	str, readErr := userData.ReadString('\n')
@@ -28,22 +29,27 @@ func getData() ([]int64, error) {
 		strSplit = strings.Split(str, " ")
 	}
 
-	var toRet []int64
+	var toRet []int
 	for _, i := range strSplit {
-		toAdd, convErr := strconv.ParseInt(i, 10, 64)
+		toAdd, convErr := strconv.ParseInt(i, 10, 0)
 
 		if convErr != nil {
 			fmt.Printf("Error converting %q to 64 bit base 10 integer", i)
-			return []int64{}, convErr
+			return []int{}, convErr
 		}
-		toRet = append(toRet, toAdd)
+		toRet = append(toRet, int(toAdd))
 	}
 
 	return toRet, nil
 }
 
-func printStats(data []int64) error {
-	fmt.Printf("Statistics for %q", data)
+func printStats(data []int) error {
+	// sort data
+	sort.Ints(data)
+	// printMin(data)
+	fmt.Printf("Min: %d\n", data[0])
+	// printMax(data)
+
 	return nil
 }
 
