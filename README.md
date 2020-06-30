@@ -21,3 +21,6 @@ Well, I made this as an exercise in Python and Go. I have been using the Python 
 # NOTE 
 # The Go version ONLY WORKS WITH INTS RIGHT NOW
 - yes, I will be changing that later, for now, use the python version, unless you want to use the Go version, then by all means, go ahead!
+
+
+- Here is a good online one that I found: https://www.calculatorsoup.com/calculators/statistics/descriptivestatistics.php
