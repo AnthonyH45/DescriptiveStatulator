@@ -6,4 +6,11 @@ A descriptive statistics calculator to run from the command line
 - paste in the data as either comma separated values, or whitespace separated
 - hit enter and read the output
 
-# Go version coming soon!!
+# To use the Go version
+- `go run calc.go`
+- paste in the data as either comma separated values, or whitespace separated
+- hit enter and read the output
+- # OR if you want to create an executable
+- `go build calc.go`
+- `./calc`
+- the rest is the same
