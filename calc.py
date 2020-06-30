@@ -67,6 +67,9 @@ def print_stats():
     Q2 = median
     print("Q2:",Q2)
 
+    # print_q3(data)
+    Q3 = (math.ceil((0.75*(len(data)+1)))+math.floor((0.25*(len(data)+1))))/2
+    print("Q3:",Q3)
     #print
 
 print_stats()
