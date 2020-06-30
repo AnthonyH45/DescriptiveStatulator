@@ -48,18 +48,23 @@ func printStats(data []int) error {
 	// sort data
 	sort.Ints(data)
 	fmt.Printf("%q\n", data)
+
 	// printMin(data)
 	min := data[0]
 	fmt.Printf("Min: %d\n", min)
+
 	// printMax(data)
 	max := data[len(data)-1]
 	fmt.Printf("Max: %d\n", max)
+
 	// printRange
 	rang := max - min
 	fmt.Printf("Range: %d\n", rang)
+
 	// printSize(data)
 	size := len(data)
 	fmt.Printf("Size: %d\n", size)
+
 	// printSum(data)
 	sum := func(data []int) int {
 		toRet := 0
@@ -70,9 +75,11 @@ func printStats(data []int) error {
 	}
 	s := sum(data)
 	fmt.Printf("Sum: %d\n", s)
+
 	// printMean(data)
 	mean := float64(s) / float64(size)
 	fmt.Printf("Mean: %f\n", mean)
+
 	// printMedian(data)
 	var median float64
 	if len(data)%2 == 1 {
@@ -81,6 +88,7 @@ func printStats(data []int) error {
 		median = float64((data[int(size/2.0)-1] + data[int(size/2.0)])) / 2.0
 	}
 	fmt.Printf("Median: %f\n", median)
+
 	// printMode(data)
 	freq := func(data []int) int {
 		freq := make([]int, max+1)
@@ -98,6 +106,7 @@ func printStats(data []int) error {
 	}
 	mode := freq(data)
 	fmt.Printf("Mode: %d\n", mode)
+
 	// printSD(data)
 	var xDiff float64 = 0
 	for _, i := range data {
@@ -106,6 +115,7 @@ func printStats(data []int) error {
 	variance := (xDiff / float64(size-1))
 	SD := math.Sqrt(variance)
 	fmt.Printf("Standard Deviatino: %f\n", SD)
+
 	// printVariance(data)
 	fmt.Printf("Variance: %f\n", variance)
 
@@ -113,17 +123,21 @@ func printStats(data []int) error {
 		fmt.Println("No quartile information if less than 4 data points")
 		return nil
 	}
+
 	// printQ1(data)
 	var Q1UL float64 = (0.25 * (float64(size) + float64(1)))
 	Q1 := (math.Ceil(Q1UL) + math.Floor(Q1UL)) / float64(2)
 	fmt.Printf("Q1: %f\n", Q1)
+
 	// printQ2(data)
 	Q2 := median
 	fmt.Printf("Q2: %f\n", Q2)
+
 	// printQ3(data)
 	var Q3UL float64 = (0.75 * (float64(size) + float64(1)))
 	Q3 := (math.Ceil(Q3UL) + math.Floor(Q3UL)) / float64(2)
 	fmt.Printf("Q3: %f\n", Q3)
+
 	// printIQR(data)
 	IQR := Q3 - Q1
 	fmt.Printf("IQR: %f\n", IQR)
