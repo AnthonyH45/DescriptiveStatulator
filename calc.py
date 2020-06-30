@@ -68,8 +68,11 @@ def print_stats():
     print("Q2:",Q2)
 
     # print_q3(data)
-    Q3 = (math.ceil((0.75*(len(data)+1)))+math.floor((0.25*(len(data)+1))))/2
+    Q3 = (math.ceil((0.75*(len(data)+1)))+math.floor((0.75*(len(data)+1))))/2
     print("Q3:",Q3)
-    #print
+
+    # print_IQR(data)
+    IQR = Q3 - Q1
+    print("IQR:",IQR)
 
 print_stats()
