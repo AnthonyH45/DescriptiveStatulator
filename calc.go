@@ -153,7 +153,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("%q\n", data)
+	fmt.Printf("%f\n", data)
 
 	//printStats(data)
 }
