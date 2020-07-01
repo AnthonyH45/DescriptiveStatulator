@@ -104,7 +104,7 @@ func printStats(data []float64) error {
 		}
 
 		max := m[data[0]]
-		toRetIndex := 0.0
+		toRetIndex := data[0]
 		for k, v := range m {
 			if v > max {
 				max = v
