@@ -89,25 +89,32 @@ func printStats(data []float64) error {
 	}
 	fmt.Printf("Median: %f\n", median)
 
-	/*
-		// printMode(data)
-		freq := func(data []float64) float64 {
-			freq := make([]float64, int(max+1))
-			for i := 0; i < len(data); i++ {
-				freq[data[i]]++
-			}
+	// printMode(data)
+	freq := func(data []float64) float64 {
+		// m := map of {float64 : int} // {key : val}
+		m := make(map[float64]int)
+		for i := 0; i < len(data); i++ {
+			_, exists := m[data[i]]
 
-			max := freq[0]
-			for i := 0; i < len(freq); i++ {
-				if freq[i] > max {
-					max = i
-				}
+			if exists {
+				m[data[i]]++
+			} else {
+				m[data[i]] = 0
 			}
-			return max
 		}
-		mode := freq(data)
-		fmt.Printf("Mode: %d\n", mode)
-	*/
+
+		max := m[data[0]]
+		toRetIndex := 0.0
+		for k, v := range m {
+			if v > max {
+				max = v
+				toRetIndex = k
+			}
+		}
+		return toRetIndex
+	}
+	mode := freq(data)
+	fmt.Printf("Mode: %f\n", mode)
 
 	// printSD(data)
 	var xDiff float64 = 0
