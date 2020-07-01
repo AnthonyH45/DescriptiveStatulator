@@ -128,7 +128,6 @@ func printStats(data []float64) error {
 
 	// printQ1(data)
 	var Q1UL float64 = (0.25 * (float64(size) + 1.0))
-	fmt.Printf("Q1: %f\n", Q1UL)
 	Q1 := (math.Ceil(Q1UL) + math.Floor(Q1UL)) / 2.0
 	fmt.Printf("Q1: %f\n", Q1)
 
@@ -138,7 +137,6 @@ func printStats(data []float64) error {
 
 	// printQ3(data)
 	var Q3UL float64 = (0.75 * (float64(size) + 1.0))
-	fmt.Printf("Q3: %f\n", Q3UL)
 	Q3 := (math.Ceil(Q3UL) + math.Floor(Q3UL)) / 2.0
 	fmt.Printf("Q3: %f\n", Q3)
 
